@@ -1,0 +1,595 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Yellowtail&family=Righteous&family=Caveat:wght@400;700&family=Permanent+Marker&family=Architects+Daughter&family=Titan+One&family=Baloo+2:wght@400;700;800&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#f0e6cc;
+  --cream2:#e8d9b8;
+  --ink:#1a1208;
+  --brown:#5c3a10;
+  --gold:#c8960a;
+  --red:#c0392b;
+  --blue:#1a4a7a;
+  --green:#1a5c2a;
+  --purple:#6a2a9a;
+  --orange:#d4560a;
+}
+
+/* ── FUENTES POR ROL ──
+   TÍTULO PRINCIPAL  → Titan One   (bombástico, gordo, impacto)
+   CIUDAD/LUGAR      → Righteous   (aventurero, años 70, road-trip)
+   LABELS/BADGES     → Boogaloo    (playful, redondo, amigable)
+   SUBTÍTULOS        → Baloo 2     (friendly, legible, viajero)
+   DIARIO/TEXTOS     → Architects Daughter (manuscrita, íntima)
+   FIRMAS            → Permanent Marker   (marker auténtico)
+   FECHAS/CAPS       → Yellowtail  (script elegante-casual)
+*/
+
+.pg{
+  background:#f0e6cc;
+  width:100%;
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+}
+
+/* FONDO SELLOS */
+.sbg{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+
+.content{position:relative;z-index:2;max-width:800px;margin:0 auto;padding:2.5rem 1.5rem 5rem;}
+
+/* ── HEADER ── */
+.hdr{text-align:center;padding:2.2rem 1rem 2rem;margin-bottom:2.8rem;position:relative;}
+.hdr-eyebrow{
+  font-family:'Boogaloo',cursive;
+  font-size:0.78rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#fff;
+  background:#1a4a7a;
+  display:inline-block;
+  padding:0.28rem 1.2rem;
+  border-radius:3px;
+  margin-bottom:0.9rem;
+}
+.hdr-title{
+  font-family:'Titan One',cursive;
+  font-size:clamp(2.4rem,7vw,4rem);
+  color:#1a1208;
+  line-height:1;
+  margin-bottom:0.2rem;
+  letter-spacing:-0.01em;
+  text-shadow:4px 4px 0 rgba(200,150,10,0.3), 6px 6px 0 rgba(200,150,10,0.12);
+}
+.hdr-title span{color:#c0392b;}
+.hdr-sub{
+  font-family:'Yellowtail',cursive;
+  font-size:clamp(1.1rem,3vw,1.6rem);
+  color:#5c3a10;
+  margin-bottom:1rem;
+  line-height:1.3;
+}
+.hdr-loc{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-family:'Boogaloo',cursive;
+  font-size:0.82rem;
+  color:#5c3a10;
+  background:rgba(200,150,10,0.14);
+  border:2.5px dashed rgba(200,150,10,0.45);
+  border-radius:40px;
+  padding:0.4rem 1.2rem;
+  letter-spacing:0.03em;
+}
+.hdr-stamp-r{position:absolute;top:1.4rem;right:0.2rem;width:78px;height:78px;transform:rotate(12deg);}
+.hdr-stamp-l{position:absolute;top:1.8rem;left:0.2rem;width:64px;height:64px;transform:rotate(-9deg);opacity:0.9;}
+.fly{display:inline-block;animation:fly 2.8s ease-in-out infinite;}
+@keyframes fly{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-5px) rotate(6deg);}}
+
+/* ── SECTION LABELS ── */
+.sec{margin-bottom:2.8rem;}
+.slabel{
+  display:inline-flex;
+  align-items:center;
+  gap:0.45rem;
+  font-family:'Righteous',cursive;
+  font-size:1.05rem;
+  color:#1a1208;
+  background:rgba(200,150,10,0.16);
+  border-radius:24px;
+  padding:0.32rem 1.1rem 0.32rem 0.65rem;
+  margin-bottom:1.1rem;
+  letter-spacing:0.02em;
+}
+.sico{font-size:1.05rem;}
+
+/* ── ITINERARY ── */
+.itin-wrap{
+  background:rgba(255,250,238,0.85);
+  border:2.5px solid rgba(92,58,16,0.2);
+  border-radius:18px;
+  padding:1.5rem 1.7rem;
+  position:relative;
+}
+.itin-stop{display:flex;gap:0;}
+.il{display:flex;flex-direction:column;align-items:center;width:38px;flex-shrink:0;}
+.pin{
+  width:28px;height:28px;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  background:#c0392b;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;margin-left:5px;
+}
+.pin span{transform:rotate(45deg);font-family:'Boogaloo',cursive;font-size:0.58rem;color:#fff;font-weight:700;letter-spacing:0.04em;}
+.vline{flex:1;width:2px;background:rgba(92,58,16,0.18);margin:4px 0;border-radius:2px;}
+.ic{padding:0 0 1.6rem 0.9rem;flex:1;}
+
+/* FECHA: Architects Daughter — íntima, de agenda */
+.idate{
+  font-family:'Architects Daughter',cursive;
+  font-size:0.78rem;
+  color:#c8960a;
+  margin-bottom:0.18rem;
+  letter-spacing:0.02em;
+}
+/* CIUDAD: Righteous — aventurero, road-trip */
+.iplace{
+  font-family:'Righteous',cursive;
+  font-size:1.12rem;
+  color:#1a1208;
+  margin-bottom:0.22rem;
+  line-height:1.2;
+}
+/* HOTEL: Yellowtail — script viajero elegante */
+.ihotel{
+  font-family:'Yellowtail',cursive;
+  font-size:1rem;
+  color:#5c3a10;
+  display:flex;align-items:center;gap:0.35rem;
+  margin-bottom:0.35rem;
+  line-height:1.3;
+}
+/* EXCURSIONES: Architects Daughter — diario de viaje */
+.exc{
+  font-family:'Architects Daughter',cursive;
+  font-size:0.9rem;
+  color:#3a2008;
+  display:flex;align-items:flex-start;gap:0.45rem;
+  line-height:1.3;
+  margin-bottom:0.22rem;
+}
+.ebullet{
+  flex-shrink:0;margin-top:2px;
+  width:16px;height:16px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.6rem;color:#fff;font-family:'Boogaloo',cursive;
+}
+.eb1{background:#e67e22;}.eb2{background:#27ae60;}.eb3{background:#2980b9;}.eb4{background:#8e44ad;}
+
+/* ── POLAROIDS ── */
+.pol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1.3rem;}
+.pol{
+  background:#fff;
+  padding:0.68rem 0.68rem 1.8rem;
+  border-radius:2px;
+  box-shadow:3px 4px 0 rgba(92,58,16,0.18);
+  transition:transform .22s,box-shadow .22s;
+  cursor:default;
+}
+.pol:nth-child(1){transform:rotate(-2.8deg);}
+.pol:nth-child(2){transform:rotate(1.6deg);}
+.pol:nth-child(3){transform:rotate(-1.4deg);}
+.pol:nth-child(4){transform:rotate(2.4deg);}
+.pol:nth-child(5){transform:rotate(-0.7deg);}
+.pol:nth-child(6){transform:rotate(1.8deg);}
+.pol:hover{transform:rotate(0) scale(1.07) translateY(-5px);box-shadow:6px 8px 0 rgba(92,58,16,0.22);z-index:10;}
+.pol-img{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2.6rem;margin-bottom:0.5rem;border-radius:1px;}
+.pi1{background:#4e6b3a;}.pi2{background:#3a5470;}.pi3{background:#7a5a2a;}.pi4{background:#3a6858;}.pi5{background:#6a3a3a;}.pi6{background:#4a4a6a;}
+
+/* CAPTION POLAROID: Permanent Marker — foto física */
+.pol-cap{
+  font-family:'Permanent Marker',cursive;
+  font-size:0.68rem;
+  color:#3a2008;
+  text-align:center;
+  line-height:1.3;
+}
+
+/* ── DIARIO ── */
+.diary-card{
+  background:rgba(255,250,238,0.85);
+  border-radius:14px;
+  border:2.5px dashed rgba(92,58,16,0.18);
+  padding:1.5rem 1.9rem 1.4rem;
+  position:relative;
+}
+.diary-q{
+  font-family:'Titan One',cursive;
+  font-size:4rem;
+  color:rgba(200,150,10,0.22);
+  position:absolute;
+  top:-0.8rem;left:1.1rem;
+  line-height:1;
+}
+/* DIARIO texto: Architects Daughter — cuaderno íntimo */
+.diary-text{
+  font-family:'Architects Daughter',cursive;
+  font-size:1rem;
+  color:#3a2008;
+  line-height:2;
+  padding-top:0.9rem;
+}
+/* FIRMA DIARIO: Yellowtail — elegante script */
+.diary-sign{
+  font-family:'Yellowtail',cursive;
+  font-size:1.3rem;
+  color:#1a1208;
+  margin-top:0.8rem;
+  text-align:right;
+}
+
+/* ── RUTA & SELLOS ── */
+.route-card{
+  background:rgba(255,250,238,0.85);
+  border:2.5px solid rgba(92,58,16,0.18);
+  border-radius:18px;
+  padding:1.4rem 1.6rem;
+}
+.route-inner{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;}
+.rlabel{
+  font-family:'Boogaloo',cursive;
+  font-size:0.7rem;letter-spacing:0.14em;
+  color:#c8960a;text-transform:uppercase;
+  margin-bottom:0.7rem;
+}
+.rstop{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;}
+.rdot{width:10px;height:10px;border-radius:50%;background:#c0392b;flex-shrink:0;}
+.rdot.last{background:#1a4a7a;}
+/* CIUDAD RUTA: Righteous */
+.rname{font-family:'Righteous',cursive;font-size:0.82rem;color:#1a1208;}
+/* FECHA RUTA: Architects Daughter */
+.rdate{font-family:'Architects Daughter',cursive;font-size:0.8rem;color:#5c3a10;margin-left:auto;}
+
+.sellos{display:flex;flex-wrap:wrap;gap:0.75rem;}
+.sello{width:78px;height:78px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5px;transition:transform .2s;}
+.sello:hover{transform:scale(1.12) rotate(-4deg);}
+.sello-inner{width:100%;height:100%;border-radius:50%;border:1.5px dashed currentColor;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;}
+.s-r{border:2.5px solid #c0392b;color:#c0392b;}
+.s-b{border:2.5px solid #1a4a7a;color:#1a4a7a;}
+.s-g{border:2.5px solid #1a5c2a;color:#1a5c2a;}
+.s-p{border:2.5px solid #6a2a9a;color:#6a2a9a;}
+/* SELLO texto: Boogaloo — stamp playful */
+.stxt{font-family:'Boogaloo',cursive;font-size:0.7rem;letter-spacing:0.06em;}
+.scity{font-family:'Architects Daughter',cursive;font-size:0.42rem;text-align:center;text-transform:uppercase;padding:0 4px;line-height:1.2;}
+.sdate{font-family:'Architects Daughter',cursive;font-size:0.6rem;}
+
+.music-strip{display:flex;align-items:center;gap:0.9rem;margin-top:1rem;padding-top:1rem;border-top:2px dashed rgba(92,58,16,0.14);}
+.disc{width:38px;height:38px;border-radius:50%;background:#1a1208;display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0;}
+.disc::after{content:'';width:11px;height:11px;border-radius:50%;background:#f0e6cc;position:absolute;}
+.minfo .mlbl{font-family:'Boogaloo',cursive;font-size:0.65rem;letter-spacing:0.1em;color:#c8960a;text-transform:uppercase;margin-bottom:0.12rem;}
+/* CANCIÓN: Righteous — impacto */
+.minfo .msong{font-family:'Righteous',cursive;font-size:0.95rem;color:#1a1208;}
+/* ARTISTA: Yellowtail — script suave */
+.minfo .martist{font-family:'Yellowtail',cursive;font-size:0.95rem;color:#5c3a10;}
+
+/* ── FIRMAS ── */
+.sigs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(162px,1fr));gap:0.9rem;}
+.sig-card{
+  background:rgba(255,250,238,0.72);
+  border:2.5px dashed rgba(92,58,16,0.28);
+  border-radius:14px;
+  padding:0.9rem 1rem 0.8rem;
+  text-align:center;
+  position:relative;
+  transition:background .2s,transform .2s;
+}
+.sig-card:hover{background:rgba(255,250,238,0.98);transform:translateY(-3px);}
+.snum{
+  position:absolute;top:6px;left:9px;
+  font-family:'Boogaloo',cursive;
+  font-size:0.56rem;color:rgba(92,58,16,0.38);letter-spacing:0.06em;
+}
+/* NOMBRE FIRMA: Permanent Marker — firma real */
+.sname{
+  font-family:'Permanent Marker',cursive;
+  font-size:1.3rem;color:#1a1208;
+  display:block;margin-bottom:0.25rem;line-height:1.15;
+}
+/* FRASE FIRMA: Architects Daughter — anotación personal */
+.snote{
+  font-family:'Architects Daughter',cursive;
+  font-size:0.85rem;color:#5c3a10;
+  font-style:italic;display:block;line-height:1.3;
+}
+.sline{width:55%;height:1.5px;background:#1a1208;margin:0.45rem auto;opacity:0.22;border-radius:2px;}
+/* LUGAR FIRMA: Boogaloo — etiqueta */
+.sfrom{
+  font-family:'Boogaloo',cursive;
+  font-size:0.6rem;color:rgba(92,58,16,0.4);
+  letter-spacing:0.07em;text-transform:uppercase;display:block;
+}
+.add-card{
+  background:rgba(255,250,238,0.38);
+  border:2.5px dashed rgba(200,150,10,0.32);
+  border-radius:14px;
+  padding:0.9rem 1rem;
+  text-align:center;cursor:pointer;
+  transition:all .22s;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0.3rem;min-height:104px;
+}
+.add-card:hover{background:rgba(255,250,238,0.88);border-color:#c8960a;transform:translateY(-3px);}
+/* AÑADIR: Titan One — llamada a la acción */
+.add-plus{font-family:'Titan One',cursive;font-size:1.8rem;color:#c8960a;line-height:1;}
+.add-hint{font-family:'Boogaloo',cursive;font-size:0.75rem;color:#5c3a10;letter-spacing:0.06em;}
+
+/* SHARE */
+.share-wrap{text-align:center;margin-top:1rem;}
+.share-btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:#c0392b;color:#fff;
+  font-family:'Righteous',cursive;
+  font-size:0.95rem;letter-spacing:0.05em;
+  border:none;padding:0.7rem 2rem;border-radius:40px;
+  cursor:pointer;transition:background .2s,transform .2s;
+}
+.share-btn:hover{background:#1a4a7a;transform:scale(1.05);}
+
+/* FOOTER */
+.footer{
+  text-align:center;padding-top:1.5rem;
+  font-family:'Boogaloo',cursive;
+  font-size:0.7rem;letter-spacing:0.16em;
+  text-transform:uppercase;color:rgba(92,58,16,0.38);
+}
+
+/* MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(10,5,0,0.72);z-index:100;align-items:center;justify-content:center;padding:1rem;}
+.modal-bg.open{display:flex;}
+.modal{background:#f0e6cc;border:3px solid rgba(92,58,16,0.28);border-radius:18px;padding:2rem;max-width:390px;width:100%;box-shadow:8px 8px 0 rgba(0,0,0,0.18);}
+.mtitle-m{font-family:'Titan One',cursive;font-size:1.15rem;color:#1a1208;margin-bottom:1.1rem;text-align:center;}
+.mlbl{font-family:'Boogaloo',cursive;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#5c3a10;display:block;margin-bottom:0.28rem;margin-top:0.65rem;}
+.minput{width:100%;background:rgba(255,250,238,0.72);border:2px solid rgba(92,58,16,0.22);border-radius:10px;padding:0.5rem 0.8rem;font-family:'Architects Daughter',cursive;font-size:1rem;color:#1a1208;outline:none;}
+.minput:focus{border-color:#c8960a;}
+.minput::placeholder{color:rgba(92,58,16,0.32);}
+.mta{resize:vertical;min-height:56px;line-height:1.5;}
+.mbtns{display:flex;gap:0.6rem;margin-top:1.1rem;justify-content:flex-end;}
+.mbtn-p{font-family:'Righteous',cursive;font-size:0.82rem;letter-spacing:0.06em;background:#1a4a7a;color:#fff;border:none;padding:0.52rem 1.3rem;border-radius:22px;cursor:pointer;transition:background .2s;}
+.mbtn-p:hover{background:#c0392b;}
+.mbtn-g{font-family:'Boogaloo',cursive;font-size:0.82rem;background:transparent;color:#5c3a10;border:2px solid rgba(92,58,16,0.22);padding:0.52rem 1.1rem;border-radius:22px;cursor:pointer;}
+</style>
+
+<div class="pg">
+
+<!-- FONDO SELLOS -->
+<svg class="sbg" viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.1;">
+  <g transform="translate(25,55) rotate(-8)"><rect width="165" height="100" rx="4" fill="none" stroke="#c0392b" stroke-width="3"/><rect x="6" y="6" width="153" height="88" rx="2" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/><text x="82" y="30" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="700" fill="#c0392b" letter-spacing="2">IMMIGRATION</text><text x="82" y="52" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="900" fill="#c0392b">GALICIA</text><text x="82" y="70" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#c0392b">12 OCT 2024</text><text x="82" y="84" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c0392b" letter-spacing="1">ADMITTED</text></g>
+  <g transform="translate(580,75) rotate(7)"><rect width="145" height="90" rx="4" fill="none" stroke="#1a4a7a" stroke-width="3"/><rect x="5" y="5" width="135" height="80" rx="2" fill="none" stroke="#1a4a7a" stroke-width="1.5" stroke-dasharray="3,3"/><text x="72" y="28" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="700" fill="#1a4a7a" letter-spacing="2">SANTIAGO</text><text x="72" y="50" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="900" fill="#1a4a7a">ESPAÑA</text><text x="72" y="68" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a4a7a">04 OCT 2024</text><text x="72" y="82" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a4a7a" letter-spacing="1">ADMITTED</text></g>
+  <g transform="translate(330,18) rotate(3)"><circle cx="58" cy="58" r="55" fill="none" stroke="#1a5c2a" stroke-width="3"/><circle cx="58" cy="58" r="47" fill="none" stroke="#1a5c2a" stroke-width="1.5" stroke-dasharray="4,3"/><text x="58" y="44" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="700" fill="#1a5c2a" letter-spacing="1">WELCOME TO</text><text x="58" y="64" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="900" fill="#1a5c2a">VIGO</text><text x="58" y="80" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="#1a5c2a">11 OCT 2024</text></g>
+  <g transform="translate(200,135) rotate(-15)" opacity="0.75"><path d="M0 9 L34 0 L29 9 L34 18Z" fill="#c0392b"/><path d="M11 4 L24 2 L22 9 L11 14Z" fill="#c0392b"/></g>
+  <g transform="translate(595,295) rotate(-6)"><rect width="135" height="80" rx="35" fill="none" stroke="#c0392b" stroke-width="2.5"/><text x="67" y="30" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c0392b" letter-spacing="2">IMMIGRATION</text><text x="67" y="50" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="900" fill="#c0392b">A CORUÑA</text><text x="67" y="67" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#c0392b">13 OCT 2024</text></g>
+  <g transform="translate(8,275) rotate(5)"><rect width="155" height="72" rx="4" fill="none" stroke="#1a5c2a" stroke-width="2.5"/><rect x="5" y="5" width="145" height="62" rx="2" fill="none" stroke="#1a5c2a" stroke-width="1" stroke-dasharray="3,2"/><text x="77" y="24" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a5c2a" letter-spacing="2">IMMIGRATION</text><text x="77" y="44" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#1a5c2a">PONTEVEDRA</text><text x="77" y="60" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#1a5c2a">08 OCT · ADMITTED</text></g>
+  <path d="M100 400 Q300 345 510 415 Q660 465 760 375" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="9,5" opacity="0.45"/>
+  <g transform="translate(275,335) rotate(-4)"><circle cx="52" cy="52" r="49" fill="none" stroke="#1a4a7a" stroke-width="2.5"/><circle cx="52" cy="52" r="42" fill="none" stroke="#1a4a7a" stroke-width="1" stroke-dasharray="3,3"/><text x="52" y="38" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a4a7a" letter-spacing="1">WELCOME TO</text><text x="52" y="56" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#1a4a7a">LUGO</text><text x="52" y="72" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#1a4a7a">01 OCT 2024</text></g>
+  <g transform="translate(515,425) rotate(8)"><rect width="148" height="90" rx="4" fill="none" stroke="#6a2a9a" stroke-width="2.5"/><rect x="5" y="5" width="138" height="80" rx="2" fill="none" stroke="#6a2a9a" stroke-width="1" stroke-dasharray="4,3"/><text x="74" y="27" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#6a2a9a" letter-spacing="2">RÍAS BAIXAS</text><text x="74" y="50" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="900" fill="#6a2a9a">GALICIA</text><text x="74" y="66" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#6a2a9a">08 OCT 2024</text><text x="74" y="80" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#6a2a9a" letter-spacing="1">ADMITTED · ES</text></g>
+  <g transform="translate(445,260) rotate(22)" opacity="0.65"><path d="M0 9 L34 0 L29 9 L34 18Z" fill="#1a4a7a"/><path d="M11 4 L24 2 L22 9 L11 14Z" fill="#1a4a7a"/></g>
+  <g transform="translate(48,515) rotate(-3)"><rect width="135" height="76" rx="35" fill="none" stroke="#c0392b" stroke-width="2.5"/><text x="67" y="28" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c0392b" letter-spacing="2">ESPAÑA</text><text x="67" y="48" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="900" fill="#c0392b">CAMINO</text><text x="67" y="63" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#c0392b">OCT 2024 · ES</text></g>
+  <g transform="translate(555,555) rotate(5)"><rect width="162" height="95" rx="4" fill="none" stroke="#1a5c2a" stroke-width="3"/><rect x="6" y="6" width="150" height="83" rx="2" fill="none" stroke="#1a5c2a" stroke-width="1.5" stroke-dasharray="4,3"/><text x="81" y="28" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="700" fill="#1a5c2a" letter-spacing="2">IMMIGRATION</text><text x="81" y="52" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="900" fill="#1a5c2a">SANTIAGO</text><text x="81" y="68" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#1a5c2a">DE COMPOSTELA</text><text x="81" y="83" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a5c2a" letter-spacing="1">04 OCT 2024</text></g>
+  <g transform="translate(325,575) rotate(-24)" opacity="0.65"><path d="M0 9 L34 0 L29 9 L34 18Z" fill="#1a5c2a"/><path d="M11 4 L24 2 L22 9 L11 14Z" fill="#1a5c2a"/></g>
+  <g transform="translate(145,635) rotate(7)"><circle cx="54" cy="54" r="51" fill="none" stroke="#1a4a7a" stroke-width="2.5"/><circle cx="54" cy="54" r="43" fill="none" stroke="#1a4a7a" stroke-width="1" stroke-dasharray="3,3"/><text x="54" y="40" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a4a7a" letter-spacing="1">ATLANTIC</text><text x="54" y="58" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#1a4a7a">COAST</text><text x="54" y="74" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#1a4a7a">GALICIA · ES</text></g>
+  <path d="M0 710 Q200 655 410 725 Q590 785 800 705" fill="none" stroke="#1a4a7a" stroke-width="1.5" stroke-dasharray="9,5" opacity="0.38"/>
+  <g transform="translate(415,700) rotate(-6)"><rect width="145" height="80" rx="35" fill="none" stroke="#6a2a9a" stroke-width="2.5"/><text x="72" y="30" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#6a2a9a" letter-spacing="2">VIGO · ES</text><text x="72" y="52" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#6a2a9a">CÍES</text><text x="72" y="68" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#6a2a9a">11 OCT 2024</text></g>
+  <g transform="translate(18,820) rotate(4)"><rect width="158" height="86" rx="4" fill="none" stroke="#c0392b" stroke-width="2.5"/><rect x="5" y="5" width="148" height="76" rx="2" fill="none" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/><text x="79" y="27" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c0392b" letter-spacing="2">TORRE DE</text><text x="79" y="50" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="900" fill="#c0392b">HÉRCULES</text><text x="79" y="66" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#c0392b">13 OCT 2024 · ES</text></g>
+  <g transform="translate(575,840) rotate(-5)"><circle cx="57" cy="57" r="54" fill="none" stroke="#1a5c2a" stroke-width="2.5"/><circle cx="57" cy="57" r="46" fill="none" stroke="#1a5c2a" stroke-width="1" stroke-dasharray="3,3"/><text x="57" y="42" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a5c2a" letter-spacing="1">ALBARIÑO</text><text x="57" y="60" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#1a5c2a">CAMBADOS</text><text x="57" y="76" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#1a5c2a">09 OCT 2024</text></g>
+  <g transform="translate(275,900) rotate(11)" opacity="0.62"><path d="M0 9 L34 0 L29 9 L34 18Z" fill="#6a2a9a"/><path d="M11 4 L24 2 L22 9 L11 14Z" fill="#6a2a9a"/></g>
+  <path d="M0 960 Q210 885 460 945 Q630 985 800 905" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="9,5" opacity="0.32"/>
+  <g transform="translate(300,1000) rotate(-5)"><rect width="160" height="92" rx="4" fill="none" stroke="#1a4a7a" stroke-width="2.5"/><rect x="5" y="5" width="150" height="82" rx="2" fill="none" stroke="#1a4a7a" stroke-width="1" stroke-dasharray="3,2"/><text x="80" y="28" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a4a7a" letter-spacing="2">IMMIGRATION</text><text x="80" y="52" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="900" fill="#1a4a7a">LUGO</text><text x="80" y="68" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#1a4a7a">01 OCT 2024</text><text x="80" y="82" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#1a4a7a" letter-spacing="1">ADMITTED · ES</text></g>
+  <g transform="translate(30,1100) rotate(6)"><circle cx="55" cy="55" r="52" fill="none" stroke="#c0392b" stroke-width="2.5"/><circle cx="55" cy="55" r="44" fill="none" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,3"/><text x="55" y="40" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c0392b" letter-spacing="1">WELCOME TO</text><text x="55" y="58" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="900" fill="#c0392b">GALICIA</text><text x="55" y="74" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#c0392b">OCT 2024</text></g>
+  <g transform="translate(580,1080) rotate(-7)"><rect width="145" height="78" rx="35" fill="none" stroke="#6a2a9a" stroke-width="2.5"/><text x="72" y="30" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#6a2a9a" letter-spacing="2">ADMITTED</text><text x="72" y="50" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="900" fill="#6a2a9a">BOTAFUMEIRO</text><text x="72" y="66" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#6a2a9a">SANTIAGO · ES</text></g>
+  <path d="M0 1160 Q250 1090 500 1155 Q660 1200 800 1130" fill="none" stroke="#1a5c2a" stroke-width="1.5" stroke-dasharray="9,5" opacity="0.3"/>
+</svg>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+<!-- HEADER -->
+<div class="hdr">
+  <svg class="hdr-stamp-r" viewBox="0 0 78 78" fill="none"><circle cx="39" cy="39" r="36" stroke="#c0392b" stroke-width="3"/><circle cx="39" cy="39" r="29" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/><text x="39" y="29" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#c0392b" letter-spacing="1">GALICIA</text><text x="39" y="48" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="900" fill="#c0392b">ES</text><text x="39" y="63" text-anchor="middle" font-family="sans-serif" font-size="6.5" fill="#c0392b">2024</text></svg>
+  <svg class="hdr-stamp-l" viewBox="0 0 64 64" fill="none"><rect width="62" height="62" x="1" y="1" rx="4" stroke="#1a4a7a" stroke-width="2.5"/><rect width="50" height="50" x="7" y="7" rx="2" stroke="#1a4a7a" stroke-width="1.2" stroke-dasharray="3,2"/><text x="32" y="26" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="700" fill="#1a4a7a" letter-spacing="1">SPAIN</text><text x="32" y="42" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="900" fill="#1a4a7a">OCT</text><text x="32" y="55" text-anchor="middle" font-family="sans-serif" font-size="5.5" fill="#1a4a7a">ADMITTED</text></svg>
+
+  <div class="hdr-eyebrow"><span class="fly">✈</span> República de los Viajeros · Galicia Branch</div>
+  <div class="hdr-title">Pasaporte de <span>Recuerdos</span></div>
+  <div class="hdr-sub">Un diario del peregrino — memorias, caminos y pulpo á feira</div>
+  <div class="hdr-loc">
+    <span class="fly">✈</span>
+    Galicia, España · Santiago · Vigo · A Coruña · Pontevedra · Rías Baixas · Lugo · Otoño 2024
+  </div>
+</div>
+
+<!-- ITINERARIO -->
+<div class="sec">
+  <div class="slabel"><span class="sico">🗺️</span> Itinerario del viaje</div>
+  <div class="itin-wrap">
+    <div class="itin-stop">
+      <div class="il"><div class="pin"><span>ES</span></div><div class="vline"></div></div>
+      <div class="ic">
+        <div class="idate">📅 1–3 Oct · Días 1–3</div>
+        <div class="iplace">Lugo</div>
+        <div class="ihotel">🏨 Parador de Lugo — dentro de la muralla romana</div>
+        <div class="exc"><div class="ebullet eb2">🚶</div>Muralla Romana (UNESCO) — paseo completo al atardecer</div>
+        <div class="exc"><div class="ebullet eb3">⛪</div>Catedral de Santa María — misa del peregrino</div>
+        <div class="exc"><div class="ebullet eb1">🐙</div>Mercado de Abastos — pulpo á feira y empanada gallega</div>
+      </div>
+    </div>
+    <div class="itin-stop">
+      <div class="il"><div class="pin"><span>ES</span></div><div class="vline"></div></div>
+      <div class="ic">
+        <div class="idate">📅 4–7 Oct · Días 4–7</div>
+        <div class="iplace">Santiago de Compostela</div>
+        <div class="ihotel">🏨 Hostal dos Reis Católicos — Praza do Obradoiro</div>
+        <div class="exc"><div class="ebullet eb3">⛪</div>Catedral de Santiago — misa del peregrino y botafumeiro</div>
+        <div class="exc"><div class="ebullet eb2">🚶</div>Tramo final del Camino Francés — entrada a pie</div>
+        <div class="exc"><div class="ebullet eb3">🏛️</div>Museo das Peregrinacións e de Santiago</div>
+        <div class="exc"><div class="ebullet eb1">🦞</div>Rúa do Franco — cena de mariscos y ribeiro</div>
+      </div>
+    </div>
+    <div class="itin-stop">
+      <div class="il"><div class="pin"><span>ES</span></div><div class="vline"></div></div>
+      <div class="ic">
+        <div class="idate">📅 8–10 Oct · Días 8–10</div>
+        <div class="iplace">Pontevedra & Rías Baixas</div>
+        <div class="ihotel">🏨 Hotel Rías Bajas — casco histórico de Pontevedra</div>
+        <div class="exc"><div class="ebullet eb2">🚶</div>Casco viejo de Pontevedra — el más bello casco peatonal de España</div>
+        <div class="exc"><div class="ebullet eb4">⛵</div>Rías Baixas en barco — batea de mejillones y ostras</div>
+        <div class="exc"><div class="ebullet eb1">🍷</div>Cambados — capital del Albariño, bodega y cata</div>
+      </div>
+    </div>
+    <div class="itin-stop">
+      <div class="il"><div class="pin"><span>ES</span></div><div class="vline"></div></div>
+      <div class="ic">
+        <div class="idate">📅 11–12 Oct · Días 11–12</div>
+        <div class="iplace">Vigo</div>
+        <div class="ihotel">🏨 Hotel Coia — frente a la Ría de Vigo</div>
+        <div class="exc"><div class="ebullet eb4">🏖️</div>Islas Cíes — Parque Nacional, playa de Rodas</div>
+        <div class="exc"><div class="ebullet eb1">🦪</div>Rúa das Ostras — ostras frescas y vino do país</div>
+        <div class="exc"><div class="ebullet eb4">🌅</div>Castillo del Castro — panorámica de la ría al atardecer</div>
+      </div>
+    </div>
+    <div class="itin-stop" style="margin-bottom:0;">
+      <div class="il"><div class="pin"><span>ES</span></div></div>
+      <div class="ic" style="padding-bottom:0;">
+        <div class="idate">📅 13–14 Oct · Días 13–14</div>
+        <div class="iplace">A Coruña</div>
+        <div class="ihotel">🏨 Hotel Zenit Coruña — frente al Paseo Marítimo</div>
+        <div class="exc"><div class="ebullet eb3">🏛️</div>Torre de Hércules — faro romano activo más antiguo del mundo</div>
+        <div class="exc"><div class="ebullet eb2">🚶</div>Paseo Marítimo — galería de cristal más larga de Europa</div>
+        <div class="exc"><div class="ebullet eb1">🦞</div>Cena de despedida — mariscos en A Penela, Ciudad Vieja</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ALBUM -->
+<div class="sec">
+  <div class="slabel"><span class="sico">📸</span> Álbum de fotos</div>
+  <div class="pol-grid">
+    <div class="pol"><div class="pol-img pi1">⛪</div><div class="pol-cap">Obradoiro bajo la lluvia fina</div></div>
+    <div class="pol"><div class="pol-img pi2">🏖️</div><div class="pol-cap">Cíes — playa de Rodas</div></div>
+    <div class="pol"><div class="pol-img pi3">🐙</div><div class="pol-cap">Pulpo á feira en Lugo</div></div>
+    <div class="pol"><div class="pol-img pi4">⛵</div><div class="pol-cap">Batea en las Rías Baixas</div></div>
+    <div class="pol"><div class="pol-img pi5">🏛️</div><div class="pol-cap">Muralla romana a la niebla</div></div>
+    <div class="pol"><div class="pol-img pi6">🌅</div><div class="pol-cap">Torre de Hércules al ocaso</div></div>
+  </div>
+</div>
+
+<!-- DIARIO -->
+<div class="sec">
+  <div class="slabel"><span class="sico">📖</span> Entrada del diario</div>
+  <div class="diary-card">
+    <div class="diary-q">"</div>
+    <div class="diary-text">Galicia no te recibe, te absorbe. La niebla es parte del paisaje y el silencio es parte del camino. Caminamos entre piedras que ya existían cuando ninguno de nosotros éramos ni una idea. Comimos de pie, con los dedos, mirando el mar. Bebimos albariño que sabía a tierra mojada y a sal.<br><br>Llevamos a casa el olor a eucalipto y el eco de las gaitas. Y esa sensación rara de haber dejado algo nuestro en cada adoquín.</div>
+    <div class="diary-sign">— El cronista de la expedición gallega</div>
+  </div>
+</div>
+
+<!-- RUTA & SELLOS -->
+<div class="sec">
+  <div class="slabel"><span class="sico">🛂</span> Ruta & Sellos del pasaporte</div>
+  <div class="route-card">
+    <div class="route-inner">
+      <div style="flex:1;min-width:155px;">
+        <div class="rlabel">✈ Itinerario</div>
+        <div class="rstop"><div class="rdot"></div><span class="rname">Lugo</span><span class="rdate">1 Oct</span></div>
+        <div class="rstop"><div class="rdot"></div><span class="rname">Santiago</span><span class="rdate">4 Oct</span></div>
+        <div class="rstop"><div class="rdot"></div><span class="rname">Pontevedra</span><span class="rdate">8 Oct</span></div>
+        <div class="rstop"><div class="rdot"></div><span class="rname">Vigo</span><span class="rdate">11 Oct</span></div>
+        <div class="rstop"><div class="rdot last"></div><span class="rname">A Coruña</span><span class="rdate">13 Oct</span></div>
+      </div>
+      <div style="flex:1;min-width:200px;">
+        <div class="rlabel">🛂 Sellos oficiales</div>
+        <div class="sellos">
+          <div class="sello s-r"><div class="sello-inner"><span class="stxt">ES</span><span class="scity">Lugo</span><span class="sdate">1 Oct</span></div></div>
+          <div class="sello s-g"><div class="sello-inner"><span class="stxt">ES</span><span class="scity">Santiago</span><span class="sdate">4 Oct</span></div></div>
+          <div class="sello s-b"><div class="sello-inner"><span class="stxt">ES</span><span class="scity">Vigo</span><span class="sdate">11 Oct</span></div></div>
+          <div class="sello s-p"><div class="sello-inner"><span class="stxt">ES</span><span class="scity">A Coruña</span><span class="sdate">13 Oct</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="music-strip">
+      <div class="disc"></div>
+      <div class="minfo">
+        <div class="mlbl">🎵 Banda sonora del viaje</div>
+        <div class="msong">Negra Sombra</div>
+        <div class="martist">Canción popular gallega</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIRMAS -->
+<div class="sec">
+  <div class="slabel"><span class="sico">✍️</span> Firmas de los expedicionarios</div>
+  <div class="sigs-grid" id="sigsGrid">
+    <div class="sig-card">
+      <span class="snum">N° 001</span>
+      <span class="sname">Tu nombre</span>
+      <p class="snote">"El Camino te cambia sin avisar"</p>
+      <div class="sline"></div>
+      <span class="sfrom">el cronista</span>
+    </div>
+    <div class="add-card" onclick="openModal()">
+      <div class="add-plus">+</div>
+      <span class="add-hint">✈ Agregar mi firma</span>
+    </div>
+  </div>
+</div>
+
+<div class="share-wrap">
+  <button class="share-btn">🌍 Compartir este pasaporte</button>
+</div>
+
+<div class="footer">✈ Pasaporte de Recuerdos · Galicia, España · Otoño MMXXIV · Hecho con amor viajero ✈</div>
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <p class="mtitle-m">✈ Firmá el Pasaporte</p>
+    <label class="mlbl">Tu nombre</label>
+    <input class="minput" id="sigName" type="text" placeholder="Como te llaman en el camino..." maxlength="26"/>
+    <label class="mlbl">Tu lema o recuerdo favorito</label>
+    <textarea class="minput mta" id="sigNote" placeholder="Una frase para la eternidad..." maxlength="80"></textarea>
+    <label class="mlbl">Desde dónde firmás</label>
+    <input class="minput" id="sigFrom" type="text" placeholder="ej: desde Santiago de Compostela..." maxlength="40"/>
+    <div class="mbtns">
+      <button class="mbtn-g" onclick="closeModal()">Cancelar</button>
+      <button class="mbtn-p" onclick="addSig()">Sellar ✈</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let sc=2;
+function openModal(){document.getElementById('modal').classList.add('open');document.getElementById('sigName').focus();}
+function closeModal(){document.getElementById('modal').classList.remove('open');['sigName','sigNote','sigFrom'].forEach(id=>document.getElementById(id).value='');}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function addSig(){
+  const name=document.getElementById('sigName').value.trim();
+  const note=document.getElementById('sigNote').value.trim();
+  const from=document.getElementById('sigFrom').value.trim();
+  if(!name){document.getElementById('sigName').focus();return;}
+  const grid=document.getElementById('sigsGrid');
+  const btn=grid.querySelector('.add-card');
+  const num=String(sc).padStart(3,'0');
+  const card=document.createElement('div');
+  card.className='sig-card';
+  card.innerHTML=`<span class="snum">N° ${num}</span><span class="sname">${esc(name)}</span>${note?`<p class="snote">"${esc(note)}"</p>`:''}<div class="sline"></div><span class="sfrom">${from?esc(from):'firmó en el pasaporte'}</span>`;
+  grid.insertBefore(card,btn);
+  sc++;closeModal();
+}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+</script>
